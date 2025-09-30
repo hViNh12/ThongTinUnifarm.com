@@ -36,7 +36,7 @@ def qr_form():
             date_str = new_date.replace("/", "-")  # fallback
 
         # Link sản phẩm mà QR sẽ trỏ tới
-        url = f"http://127.0.0.1:5000/{date_str}"
+        url = request.host_url + date_str
 
         qr_img = qrcode.make(url)
         img_io = BytesIO()
